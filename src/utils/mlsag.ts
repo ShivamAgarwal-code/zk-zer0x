@@ -2,13 +2,6 @@ import { Curve, CurveName, Point, piSignature } from "@cypherlab/types-ring-sign
 import { getRandomSecuredNumber, keccak256, randomBigint } from "@cypherlab/types-ring-signature/dist/src/utils";
 import { Mlsag } from "../interfaces";
 
-/**
- * Has a string to a point on the SECP256K1 curve
- *  !!!!! NOT SECURE, DO NOT USE IN PRODUCTION !!!!!
- * 
- * @param data - The data to hash
- * @returns The point on the SECP256K1 curve
- */
 export function hashToSECP256K1(data: string): Point {
   const curve = new Curve(CurveName.SECP256K1);
   const point = curve.GtoPoint();
