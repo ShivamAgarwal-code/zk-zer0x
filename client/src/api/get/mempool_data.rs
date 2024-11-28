@@ -26,7 +26,6 @@ pub async fn async_get_mempool_data() -> Result<Response, Infallible> {
                 .body(Body::from(Json(data).to_string())) // Use `.from(serde_json::to_string(&json).unwrap())` to set the response body as JSON
                 .unwrap();
 
-            // println!("response {:?}", response); // Consider handling this Result in production code
 
             Ok(response)
         }
