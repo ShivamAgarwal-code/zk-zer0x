@@ -10,8 +10,7 @@ use serde_json::{json, Value};
 use std::convert::Infallible;
 
 pub async fn handle_user_ringct(payload: Json<PendingRingCT>) -> Result<Response, Infallible> {
-    //println!("Received a ringCT transaction {:?}", payload);
-    // println!("mempool before: {:?}", get_mempool().unwrap());
+    
     println!("received tx: {:?}", payload.hash);
     let tx = PendingRingCT {
         inputs: payload.inputs.clone(),
