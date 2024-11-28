@@ -14,17 +14,7 @@ fn h256_to_string(value: Option<H256>) -> String {
     }
 }
 
-/*
-    this function decodes the ETHDepositCreated event
-    event DepositCreated(
-        address owner, // msg.sender of the deposit
-        uint amount, // amount of the deposit (in the smallest unit)
-        string currency, // currency of the deposit
-        uint blockNumber, // block number of the deposit
-        string pubKey, // compressed public key of the owner of the utxo in the privacy layer
-        string rG // random point used to create the commitment in the privacy layer
-        );
-*/
+
 pub fn decode_eth_deposit_created_event(
     log: &Log,
     chain_id: String,
