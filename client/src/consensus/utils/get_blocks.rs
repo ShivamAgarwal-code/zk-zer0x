@@ -30,7 +30,7 @@ pub async fn get_blocks(
     // get the amount of api calls needed
     let mut api_calls: u128 = 0;
     // println!("max_block_number: {:?}", max_block_number);
-    // println!("start_block_number: {:?}", start_block_number);
+    
 
     if max_block_number > batch_size as u128 + start_block_number
         && ((max_block_number - start_block_number) % batch_size as u128 != 0)
