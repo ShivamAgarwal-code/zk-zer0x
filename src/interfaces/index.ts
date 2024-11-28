@@ -10,7 +10,7 @@ export interface baseUTXO {
 }
 
 export interface PaymentUTXO extends baseUTXO {
-  amount: string, // encrypted amount + blinding factor, only the owner can decrypt it (if coinbase, the amount is clear and there is no blinding factor)
+  amount: string, 
   currency: string, // currency -> TODO: find a way to encrypt it too
   commitment: string, // (compressed point) -> a cryptographic commitment to the amount, allows verification without revealing the amount
   rangeProof: LightRangeProof, // range proof of the amount
