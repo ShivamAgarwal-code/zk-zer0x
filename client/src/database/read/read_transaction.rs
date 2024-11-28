@@ -105,8 +105,8 @@ pub fn get_latest_transactions() -> Result<Vec<Transaction>, lmdb::Error> {
         let block_number = last_block.unwrap() - i;
         // Get the transactions from the "Transactions" database for this block
         let block_transactions = match get_block_by_number(block_number) {
-            Ok(txns) => txns,   // If there are transactions in the block, return them
-            Err(_) => continue, // Otherwise, skip to the next iteration and check the previous block (if any)
+            Ok(txns) => txns,  
+            Err(_) => continue, 
         };
         txns.extend(block_transactions.transactions.into_iter());
         i += 1;
