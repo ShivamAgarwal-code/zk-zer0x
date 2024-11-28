@@ -11,8 +11,8 @@ pub fn get_last_state_proven() -> Result<String, lmdb::Error> {
             let value_str = String::from_utf8(value.to_vec()).map_err(|_| lmdb::Error::NotFound)?;
             Ok(value_str)
         }
-        Err(lmdb::Error::NotFound) => Ok("".to_string()), // Specifically handle not found as a valid case
-        Err(e) => Err(e),                                 // Propagate other errors
+        Err(lmdb::Error::NotFound) => Ok("".to_string()), 
+        Err(e) => Err(e),                                 
     }
 }
 
